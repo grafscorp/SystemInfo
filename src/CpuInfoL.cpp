@@ -16,7 +16,7 @@ double systemInfoL::CpuInfo::CalculateCPULoadWindows(unsigned long long idleTick
 }
 
 
-double systemInfoL::CpuInfo::GetCPUInfoWindows()
+double systemInfoL::CpuInfo::GetCPULoadWindows()
 {
     FILETIME idleTime, kernelTime, userTime;
     return GetSystemTimes(&idleTime, &kernelTime, &userTime) ? 

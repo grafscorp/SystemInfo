@@ -17,7 +17,7 @@ namespace systemInfoL
         //Calculate CPU Load data from WinApi to PerCent
         double CalculateCPULoadWindows(unsigned long long idleTicks, unsigned long long totalTicks);
         //Get Cpu Load Windows per cent
-        double GetCPUInfoWindows();
+        double GetCPULoadWindows();
 
 
     };
