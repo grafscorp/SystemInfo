@@ -6,6 +6,7 @@ set(SOURCES src)
 set(INCLUDES include)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/lib)
 
 file(GLOB systemInfoSource 
     "${SOURCES}/*.cpp"
@@ -13,6 +14,7 @@ file(GLOB systemInfoSource
 file(GLOB systemInfoInclude
     "${INCLUDES}/*.hpp"
 )
+
 add_library(SystemInfoL ${systemInfoInclude} ${systemInfoSource} )
 
 target_include_directories(SystemInfoL PUBLIC ${INCLUDES})
