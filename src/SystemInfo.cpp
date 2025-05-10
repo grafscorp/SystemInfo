@@ -5,16 +5,19 @@ namespace systemInfoL{
     CPercentInfo SystemInfo::GetCpuPercent()
     {
         #ifdef _WIN32
-            return GetCPUInfoWindows();
+            return GetCPULoadWindows();
         #endif
 
         return 0.0;
     }
 
-    
+
     template<typename MPercentInfo> 
     MPercentInfo SystemInfo::GetMemoryPercent()
     {
+        #ifdef _WIN32
+            return GetMemoryLoadWindows();
+        #endif
         return 0.0;
     }
 

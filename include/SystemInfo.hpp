@@ -1,16 +1,13 @@
 #ifndef SYSTEMINFO_HPP
 #define  SYSTEMINFO_HPP
 
-#ifdef _WIN32
-#include <windows.h>
-#include <iomanip>
-#endif
 #include <CpuInfoL.hpp>
+#include <MemoryInfo.hpp>
 
 namespace systemInfoL{
 
 //Object for get system information
-class SystemInfo : public CpuInfo
+class SystemInfo : public CpuInfo, public MemoryInfo 
 {
 public:
     template<typename CPercentInfo> 
@@ -18,6 +15,7 @@ public:
     CPercentInfo GetCpuPercent();
 
     template<typename MPercentInfo> 
+    
     //Return RAM Load in Percent for any OS
     MPercentInfo GetMemoryPercent();
 
