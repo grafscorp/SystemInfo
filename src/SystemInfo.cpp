@@ -8,7 +8,7 @@ namespace systemInfoL{
             return GetCPULoadWindows();
         #endif
 
-        return 0.0;
+        return 0;
     }
 
 
@@ -16,9 +16,18 @@ namespace systemInfoL{
     MPercentInfo SystemInfo::GetMemoryPercent()
     {
         #ifdef _WIN32
-            return GetMemoryLoadWindows();
+            try
+            {
+                return GetMemoryLoadWindows();
+            }
+            catch(const std::exception& e)
+            {
+                return 0;
+            }
+            
+            
         #endif
-        return 0.0;
+        return 0;
     }
 
 

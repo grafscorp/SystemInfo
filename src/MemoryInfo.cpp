@@ -6,7 +6,7 @@ double systemInfoL::MemoryInfo::GetMemoryLoadWindows()
     memInfo.dwLength = sizeof(MEMORYSTATUSEX);
     
     if (!GlobalMemoryStatusEx(&memInfo)) {
-        std::runtime_error("Cant get memory info");
+        throw std::runtime_error("Cant get memory info");
         return 0.0;
     }
     
